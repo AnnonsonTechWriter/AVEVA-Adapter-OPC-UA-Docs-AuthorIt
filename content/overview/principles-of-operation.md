@@ -44,6 +44,7 @@ The following table lists OPC UA variable types that the adapter collects data f
 | Decimal          | Float32          |  
 | Float            | Float32          |
 | DateTime         | DateTime         |
+| UtcTime          | DateTime         |
 | String           | String           |
 | Number           | variable, depending on the actual value |
 | Integer          | Integer          |
