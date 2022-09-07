@@ -1,11 +1,13 @@
+
 ---
 uid: ReleaseNotes
 ---
 
 # Release notes
 
-[!include[product-name](../main/shared-content/_includes/inline/product-name.md)] [!include[product-version](../main/shared-content/_includes/inline/product-version.md)]<br/>
-Adapter Framework [!include[framework-version](../main/shared-content/_includes/inline/framework-version.md)]
+PI Adpater for OPC UA:  V 1.3.0
+
+PI Adapter Framework:  V 1.6.0
 
 ## Overview
 
@@ -17,14 +19,18 @@ For more information see [PI Adapter for OPC UA overview](xref:PIAdapterForOPCUA
 
 ### Fixes
 
-The following issues reported are fixed in this release.
+The following issues reported from earlier versions are fixed in this release.
 
+- Data collection for the OPC UA server data items will no longer be skipped when the source OPC UA Server has invalid data item attributes like: DataType, Description, BrowseName, DisplayName, UserAccessLevel.
+- History recovery starttime and endtime supplied in local time format will be treated as a local time by the adapter node instead of the UTC time.
 - The OpcUa Data Type 'UtcTime' is now supported as a DateTime type.
 
 ### Enhancements
 
 The following enhancements are added in this release.
 
+- Reduce load on OPC UA server during history recovery by caching user access level.
+- Enhanced logged messages to include status code in hexadecimal instead of decimal and aliased data types.
 - Manage edge system configuration secrets in a centralized location while keeping backward compatibility
 - Exclude read-only facets from top level configuration in Get request
 - Increase the payload size to 64MB
@@ -72,6 +78,12 @@ OSIsoft has selected the [Common Vulnerability Scoring System (CVSS)](https://ww
 This section is intended to provide relevant security-related information to guide your installation or upgrade decision. OSIsoft is proactively disclosing aggregate information about the number and severity of PI Adapter for OPC UA security vulnerabilities that are fixed in this release.
 
 The Adapter's utilization of zlib through .NET 6 does not expose CVE-2018-25032 or CVE-2022-37434.
+=======
+| Component | Version | CVE or Reference | CVSS | Mitigation                                                                                                 |
+| ----------| ------- | --------------------------------------------------------------------------------------------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
+| zlib      | 1.2.11  | [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032)                                   | 7.5  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities  |                                                      |
+| zlib      | 1.2.11  | [BSDA-2018-5271](https://osisoft.blackducksoftware.com/api/vulnerabilities/BDSA-2018-5271/overview) | 7.1  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
+| zlib      | 1.2.11  | [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434)                                   | 9.3  | The PI Adapter’s utilization of zlib through the .NET 6 Framework does not expose these vulnerabilities. |
 
 ## Documentation overview
 
