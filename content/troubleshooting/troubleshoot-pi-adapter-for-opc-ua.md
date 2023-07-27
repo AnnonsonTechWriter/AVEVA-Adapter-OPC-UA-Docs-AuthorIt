@@ -4,7 +4,7 @@ uid: TroubleshootAVEVAAdapterForOPCUA
 
 # Troubleshoot AVEVA Adapter for OPC UA
 
-To troubleshoot issues with AVEVA Adapter for OPC UA, you should check the adapter's configuration, connectivity, and logs, as detailed in the following sections. If you are unable to resolve issues with the adapter or need additional guidance, contact AVEVA PI Support.
+To troubleshoot issues with AVEVA Adapter for OPC UA, you should check the adapter's configuration, connectivity, and logs, as detailed in the following sections. If you are unable to resolve issues with the adapter or need additional guidance, contact OSIsoft Technical Support.
 
 ## Check configurations
 

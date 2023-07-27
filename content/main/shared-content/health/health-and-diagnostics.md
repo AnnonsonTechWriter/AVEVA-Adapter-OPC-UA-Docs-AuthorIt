@@ -19,7 +19,7 @@ Two OMF endpoints are currently supported for adapter health data:
 
 There are a few differences in how these two systems treat the associated health and diagnostics data.
 
-- PI Web API parses the information and sends it to configured AVEVA PI Servers for the OMF endpoint. The static data is used to create an AF structure on a PI AF server. The dynamic health data is time-series data that is stored in PI points on a PI Data Archive. You can see it in the AF structure as PI point data reference attributes.
+- PI Web API parses the information and sends it to configured PI servers for the OMF endpoint. The static data is used to create an AF structure on a PI AF server. The dynamic health data is time-series data that is stored in PI points on a PI Data Archive. You can see it in the AF structure as PI point data reference attributes.
 
 - AVEVA Data Hub does not currently provide a way to store the static metadata. For AVEVA Data Hub-based adapter health endpoints, only the dynamic data is stored. Each value is its own stream with the timestamp property as the single index.
 

@@ -65,7 +65,6 @@ The following parameters are available for configuring an OPC UA data source:
 | **defaultStreamIdPattern** | Optional | `string` | Specifies the default StreamId pattern to use. Possible parameters: `{NamespaceIndex}` 1 , `{Identifier}`. Allowed value: any string Default value: `{NamespaceIndex}.{Identifier}` |
 | **dataCollectionMode** | Optional | `string` | Specifies the data collection mode the adapter is in. The following data collection modes are available: **HistoryOnly**  2  - The adapter component does not get started and history recovery on-demand is enabled. For more information, see [On-demand history recovery](xref:OnDemandHistoryRecoveryConfiguration). **CurrentOnly** - The adapter component operates normally and on-demand history recovery is disabled.**CurrentWithBackfill**  2  - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is `good`. On-demand history recovery is disabled. For more information, see [Automatic history recovery](xref:AutomaticHistoryRecovery). Changing the mode requires a restart of the adapter component. |
 | **serverFailoverEnabled** | Optional | `boolean` | Specifies whether to use server-side failover.  Allowed value: `true` or `false`  Default value: `false` |
-| **backupEndpointUrls** | Optional | array of `string` | An optional list of Endpoint URLs for servers that the adapter should use as the server-failover redundancy set. If configured, the adapter will create the redundancy set by using the endpoints specified here as well as the one in the **endpointURL** above. If not configured, the adapter will get the redundancy set from the server specified in **endpointURL** ([see the Principles of Operations page for more details](xref:AVEVAAdapterForOPCUAPrinciplesOfOperation)) |
 
  1  NamespaceIndex refers to the number specified in the `ns` keyword in the **RootNodeIds** parameter.
 
@@ -95,8 +94,7 @@ The following are examples of valid OPC UA data source configurations:
     "streamIdPrefix": null,
     "defaultStreamIdPattern": "{NamespaceIndex}.{Identifier}",
     "dataCollectionMode": "CurrentWithBackfill",
-    "serverFailoverEnabled": false,
-    "BackupEndpointUrls": []
+    "serverFailoverEnabled": false
 }
 ```
 

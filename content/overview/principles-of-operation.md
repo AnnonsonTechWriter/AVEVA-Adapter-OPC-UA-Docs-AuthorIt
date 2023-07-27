@@ -71,7 +71,7 @@ The OPC UA adapter creates a stream with three properties for each selected OPC 
 | Property name | Data type | Description |
 |---------------|-----------|-------------|
 | Timestamp     | DateTime  | Timestamp of the given OPC UA item value update. |
-| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value. **Note:** For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in ADH and the **Zero**/**Span** properties in AVEVA Web API are populated. For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in ADH and the **Eng Units** property in AVEVA Web API are populated. 1  |
+| Value         | Based on type of incoming OPC UA value | Value of the given OPC UA item update, which includes multiple properties in addition to the data value. **Note:** For OPC UA items that support EURange, the additional **Minimum**/**Maximum** properties in OCS and the **Zero**/**Span** properties in AVEVA Web API are populated. For OPC UA items that support EngineeringUnits, such as AnalogItem, the additional **UOM** property in OCS and the **Eng Units** property in AVEVA Web API are populated. 1  |
 | Quality | Unsigned integer | Data quality of the given OPC UA item update.  |
 
 1  **Note:** `Null` values with `Good` quality are discarded. `Null` values with `Bad` or `Questionable` quality send the default value `0` or `null` to the destination.
@@ -102,30 +102,25 @@ NamespaceIndex refers to the number specified in the `ns` keyword in the **NodeI
 
 **Note:** The naming convention is affected by StreamPrefix and DefaultStreamIdPattern settings in the data source configuration.
 
+## ServiceLevel and the maintenance sub-range
 
+The OPC UA adapter will use the ServiceLevel ranges defined in the OPC UA specification in order to facilitate failover and to reduce load on a server that is in maintenance. For more information about how ServiceLevel is used to faciliate failover, see [Server Failover](#server-failover). 
+
+When an OPC UA server's ServiceLevel indicates maintenance, the adapter will disconnect and will wait until the server's EstimatedReturnTime before trying to reconnect. If the server does not provide the adapter with an EstimatedReturnTime, then the adapter will increase the ReconnectDelay by doubling the value configured in the client settings configuration. 
 
 ## Server Failover
 
-The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
+The OPC UA adapter supports server failover, also known as non-transparent server redundancy. To enable this feature, the `ServerFailoverEnabled` property in the adapter component's DataSource must be set to `true`. For more information on setting this property, see [PI Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters).
 
-Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read node IDs that hold server redundancy related information:
+Upon successful connection to the primary OPC UA Server that is defined in the Data Source configuration, the adapter will read 3 node ID's that hold server redundancy related information:
 
 | Node ID | How it's used |
 |---------|---------------|
 | `i=3709`: Server redundancy mode support | This value will be used to determine the redundancy mode the adapter will follow. Currently, the supported modes are `None`, `Cold`, `Warm`, and `Hot`. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. |
-| `i=11314`: Server URI array | This value will only be read if the 'BackupEndpointUrls' property in the [Data Source Configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters) is empty or not configured. This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. **For failover to work successfully, the Server URI array must only be populated with the URL of the servers in the redundancy set.** Some OPC UA servers use URNs instead of URLs, which is not currently supported by this adapter. For OPC UA servers that use URNs, the 'BackupEndpointUrls' property in the [Data Source Configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration#opc-ua-data-source-parameters) will need to be used. |
+| `i=11314`: Server URI array | This value will be used to determine all of the servers in the redundancy set. This should include the primary server as well as any additional backup servers. The adapter will only read this property from the primary OPC UA Server that is defined in the Data Source configuration. **For failover to work successfully, the Server URI array must only be populated with the URL of the servers in the redundancy set.** Some OPC UA servers use URNs instead of URLs, which is not currently supported by this adapter. |
+| `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. |
 
 **Note:** The adapter does not currently support a runtime change to the server redundancy mode or server URI array. A user must restart the adapter if they wish to change either the server redundancy mode or the server URI array.
-
-### Service Level and Maintenance Sub-Range
-
-The adapter will use the ServiceLevel ranges defined in the OPC UA specification in order to facilitate failover and to reduce load on a server that is in maintenance. If server failover is enabled, the OPC UA adapter reads a node ID that holds the server's Service Level.
-
-| Node ID | How it's used |
-|---------|---------------|
-| `i=2267`: Service level | This value will be used to track each server's health and determine if a failover should occur. The adapter will subscribe to this value on every server in the redundancy set. Service Level is only read by the adapter when in `Cold`, `Warm`, or `Hot` redundancy modes. It is ignored in `None` mode, when server failover is disabled. |
-
-When an OPC UA server's Service Level indicates maintenance, the adapter will disconnect and will wait until the server's EstimatedReturnTime before trying to reconnect. If the server does not provide the adapter with an EstimatedReturnTime, then the adapter will increase the ReconnectDelay by doubling the value configured in the client settings configuration. 
 
 ### Supported Redundancy Modes
 
@@ -133,7 +128,7 @@ The following sections outline how the adapter behaves in each Server Redundancy
 
 #### None
 
-If the Server Redundancy Mode Support value on the primary OPC UA server is `None`, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers. The adapter will not read the Service Level and will not use the maintenance disconnect behavior described in [Service Level and Maintenance Sub-Range](#service-level-and-maintenance-sub-range). 
+If the Server Redundancy Mode Support value on the primary OPC UA server is `None`, the adapter will operate as if server failover is not enabled. The adapter will not attempt to connect or failover to any backup servers.
 
 #### Cold
 

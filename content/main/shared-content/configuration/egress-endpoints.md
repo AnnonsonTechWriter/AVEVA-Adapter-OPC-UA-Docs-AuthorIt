@@ -7,7 +7,7 @@ uid: EgressEndpointsConfiguration
 AVEVA Adapters collect time series data, which  they can send to a permanent data store (endpoint). This operation is called data egress. The following endpoints are available for data egress:
 
 - AVEVA Data Hub (ADH)
-- AVEVA PI Servers through PI Web API
+- PI servers through PI Web API
 
 For long term storage and analysis, you can configure any adapter to send time series data to one or several of these endpoints in any combination. An egress endpoint is comprised of the properties specified under [Egress endpoint parameters](#egress-endpoint-parameters).
 
