@@ -1,12 +1,12 @@
-# AVEVA Adapter for OPC UA
+# PI Adapter for OPC UA
 
-AVEVA Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to OMF (Open Message Format) endpoints in AVEVA Data Hub or AVEVA Servers.
+PI Adapter for OPC UA is a data-collection component that transfers time-series data from source devices to OMF (OSIsoft Message Format) endpoints in OSIsoft Cloud Services or PI Servers.
 
-This repository contains the documentation for AVEVA Adapter for OPC UA. You can access a readable version of this documentation [here.](https://docs.osisoft.com/bundle/AVEVA-Adapter-opc-ua/)
+This repository contains the documentation for PI Adapter for OPC UA. You can access a readable version of this documentation [here.](https://docs.osisoft.com/bundle/pi-adapter-opc-ua/)
 
 ## License
 
-<a href="https://www.osisoft.com/copyright/">© 2019 - 2023 OSIsoft, LLC. All rights reserved.</a>
+<a href="https://www.osisoft.com/copyright/">© 2019 - 2021 OSIsoft, LLC. All rights reserved.</a>
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 

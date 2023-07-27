@@ -4,7 +4,11 @@ uid: AdapterMetadata
 
 # Metadata
 
+<<<<<<< HEAD
 If the metadataLevel is set to `Low`, `Medium`, or `High` in the [General configuration](xref:GeneralConfiguration), adapter streams created by the ingress components include the following metadata:
+=======
+If the **metadataLevel** is set to `Low`, `Medium`, or `High` in the [General configuration](xref:GeneralConfiguration), adapter streams created by the ingress components include the following metadata:
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 ```code
   Datasource: {ComponentId}
@@ -24,4 +28,4 @@ The adapter may also send its own stream metadata not including health and diagn
 **Note:**
 
 - Metadata is only sent for streams created by the ingress components.
-- Currently, the only endpoint that persists sent metadata is AVEVA Data Hub (ADH).
+- Currently, the only endpoint that persists sent metadata is OCS (OSIsoft Cloud Services).

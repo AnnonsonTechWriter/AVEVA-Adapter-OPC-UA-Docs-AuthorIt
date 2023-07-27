@@ -4,7 +4,7 @@ uid: DeviceStatus
 
 # Device status
 
-The device status indicates the health of this component and if it is currently communicating properly with the data source. This time-series data is stored within a PI point or AVEVA Data Hub stream, depending on the endpoint type. During healthy steady-state operation, a value of `Good` is expected.
+The device status indicates the health of this component and if it is currently communicating properly with the data source. This time-series data is stored within a PI point or OCS stream, depending on the endpoint type. During healthy steady-state operation, a value of `Good` is expected.
 
 | Property                          | Type                                 | Description                    |
 |-----------------------------------|--------------------------------------|--------------------------------|
@@ -21,5 +21,9 @@ The possible statuses are:
 | `Device in error`               | The component encountered an error either while connecting to the data source or attempting to collect data. |
 | `Shutdown`                      | The component is either in the process of shutting down or has finished. |
 | `Removed`                       | The adapter component has been removed and will no longer collect data. |
+<<<<<<< HEAD
 | `Not Configured`                | The adapter component has been created but is not yet configured. |
 | `Attempting Failover`           | The adapter component is attempting server failover. | 
+=======
+| `NotConfigured`                 | The adapter component has been created but is not yet configured. |
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)

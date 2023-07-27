@@ -4,24 +4,28 @@ uid: HealthAndDiagnostics
 
 # Health and Diagnostics
 
-AVEVA Adapters produce various types of health data. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints. For more information on available adapter health data, see [health](xref:AdapterHealth).
+PI Adapters produce various types of health data. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints. For more information on available adapter health data, see [health](xref:AdapterHealth).
 
-AVEVA Adapters also produce diagnostic data. You can use diagnostic data to find more information about a particular adapter instance. Diagnostic data lives alongside the health data and you can egress it using a health endpoint and setting `EnableDiagnostics` to`true`. You can configure `EnableDiagnostics` in the system's [General configuration](xref:GeneralConfiguration). For more information on available adapter diagnostics data, see [diagnostics](xref:AdapterDiagnostics).
+PI Adapters also produce diagnostic data. You can use diagnostic data to find more information about a particular adapter instance. Diagnostic data lives alongside the health data and you can egress it using a health endpoint and setting `EnableDiagnostics` to`true`. You can configure `EnableDiagnostics` in the system's [General configuration](xref:GeneralConfiguration). For more information on available adapter diagnostics data, see [diagnostics](xref:AdapterDiagnostics).
 
+<<<<<<< HEAD
 In AVEVA Data Hub (ADH), both health and diagnostics data are created as assets. The data are available in the Asset Explorer and you can use them in the AVEVA Data Hub Trend feature. For more information, see the AVEVA Data Hub documentation [Assets](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/organize-data/assets/asset-concept.html).
+=======
+In OSIsoft Cloud Services (OCS), both health and diagnostics data are created as assets. The data are available in the Asset Explorer and you can use them in the OCS Trend feature. For more information, see the OCS documentation [Assets](https://docs.osisoft.com/bundle/ocs/page/add-organize-data/organize-data/assets/asset-concept.html).
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 ## Health endpoint differences
 
 Two OMF endpoints are currently supported for adapter health data:
 
 - PI Web API
-- AVEVA Data Hub (ADH)
+- OSIsoft Cloud Services (OCS)
 
 There are a few differences in how these two systems treat the associated health and diagnostics data.
 
 - PI Web API parses the information and sends it to configured PI servers for the OMF endpoint. The static data is used to create an AF structure on a PI AF server. The dynamic health data is time-series data that is stored in PI points on a PI Data Archive. You can see it in the AF structure as PI point data reference attributes.
 
-- AVEVA Data Hub does not currently provide a way to store the static metadata. For AVEVA Data Hub-based adapter health endpoints, only the dynamic data is stored. Each value is its own stream with the timestamp property as the single index.
+- OCS does not currently provide a way to store the static metadata. For OCS-based adapter health endpoints, only the dynamic data is stored. Each value is its own stream with the timestamp property as the single index.
 
 ## AF structure
 

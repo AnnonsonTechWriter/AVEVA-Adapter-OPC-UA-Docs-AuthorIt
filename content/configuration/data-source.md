@@ -40,7 +40,11 @@ Complete the following steps to configure an OPC UA data source. Use the `PUT` m
 
 7. Configure data selection.
 
+<<<<<<< HEAD
     For more information, see [AVEVA Adapter for OPC UA data selection configuration](xref:AVEVAAdapterForOPCUADataSelectionConfiguration).
+=======
+    For more information, see [PI Adapter for OPC UA data selection configuration](xref:PIAdapterForOPCUADataSelectionConfiguration).
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 ## OPC UA data source schema
 
@@ -56,6 +60,7 @@ The following parameters are available for configuring an OPC UA data source:
 
 | Parameter | Required | Type | Description |
 |-----------|----------|------|-------------|
+<<<<<<< HEAD
 | **endpointURL** | Required | `string` | The endpoint URL of the OPC UA server in opc.tcp format. The following is an example of the URL format: `opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer`**Note:** If you change the EndpointURL on a configured adapter that has _ComponentID_DataSelection.json_ file exported, you need to remove the _ComponentID_DataSelection.json_ file from the configuration directory to trigger a new browse (export). Allowed value: well-formed opc.tcp address|
 | **useSecureConnection**|Optional | `boolean` | When set to true, the adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.**Note:** OSIsoft recommends setting this option to false for testing purposes only.  Allowed value: `true` or `false`Default value: `true`|
 | **userName** | Optional | `string` | User name for accessing the OPC UA server. Allowed value: any string  Default value: `null`|
@@ -65,10 +70,21 @@ The following parameters are available for configuring an OPC UA data source:
 | **defaultStreamIdPattern** | Optional | `string` | Specifies the default StreamId pattern to use. Possible parameters: `{NamespaceIndex}` 1 , `{Identifier}`. Allowed value: any string Default value: `{NamespaceIndex}.{Identifier}` |
 | **dataCollectionMode** | Optional | `string` | Specifies the data collection mode the adapter is in. The following data collection modes are available: **HistoryOnly**  2  - The adapter component does not get started and history recovery on-demand is enabled. For more information, see [On-demand history recovery](xref:OnDemandHistoryRecoveryConfiguration). **CurrentOnly** - The adapter component operates normally and on-demand history recovery is disabled.**CurrentWithBackfill**  2  - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is `good`. On-demand history recovery is disabled. For more information, see [Automatic history recovery](xref:AutomaticHistoryRecovery). Changing the mode requires a restart of the adapter component. |
 | **serverFailoverEnabled** | Optional | `boolean` | Specifies whether to use server-side failover.  Allowed value: `true` or `false`  Default value: `false` |
+=======
+| **endpointURL** | Required | `string` | The endpoint URL of the OPC UA server in opc.tcp format. The following is an example of the URL format: `opc.tcp://OPCServerHost:Port/OpcUa/SimulationServer`<br><br>**Note:** If you change the EndpointURL on a configured adapter that has _ComponentID_DataSelection.json_ file exported, you need to remove the _ComponentID_DataSelection.json_ file from the configuration directory to trigger a new browse (export). <br><br>Allowed value: well-formed opc.tcp address|
+| **useSecureConnection**|Optional | `boolean` | When set to true, the adapter connects to a secure endpoint using OPC UA certificate exchange operation. The default is true. When set to false, the adapter connects to an unsecured endpoint of the server and certificate exchange operation is not required.<br><br>**Note:** OSIsoft recommends setting this option to false for testing purposes only. <br><br> Allowed value: `true` or `false`<br>Default value: `true`|
+| **userName** | Optional | `string` | User name for accessing the OPC UA server. <br><br>Allowed value: any string <br> Default value: `null`|
+| **password** | Optional | `string` | Password for accessing the OPC UA server.<br><br>**Note:** OSIsoft recommends using REST to configure the data source when the password must be specified because REST will encrypt the password. If you do not use REST, the plain text password will be stored on-disk. <br><br>Allowed value: any string <br> Default value: `null`|
+| **incomingTimestamp** | Optional | `string` | Specifies whether the incoming timestamp is taken from the source, from the OPC UA server, or should be created by the adapter instance. <br> **Source** - Default and recommended setting. The timestamp is taken from the source timestamp field. The source is what provides data for the item to the OPC UA server, such as a field device.<br> **Server** - In case the OPC UA item has an invalid source timestamp field, the Server timestamp can be used.<br> **Adapter** - The adapter generates a timestamp for the item upon receiving it from the OPC UA server. <br><br>Allowed value: `Source`, `Server`, or `Adapter` <br> Default value: `Source`|
+| **streamIdPrefix** | Optional | `string` | Specifies what prefix is used for Stream IDs. The naming convention is `{StreamIdPrefix}{StreamId}`. An empty string means no prefix will be added to the Stream IDs and names. A `null` value defaults to _ComponentID_ followed by a period.<br><br>Example: `OpcUa1.{NamespaceIndex}.{Identifier}`<br><br>**Note:** Every time you change the StreamIdPrefix of a configured adapter—for example, when you delete and add a data source—you need to restart the adapter for the changes to take place. New streams are created on adapter restart and pre-existing streams are no longer updated. <br><br>Allowed value: any string <br> Default value: `null`|
+| **defaultStreamIdPattern** | Optional | `string` | Specifies the default StreamId pattern to use. Possible parameters: `{NamespaceIndex}`<sup>1</sup>, `{Identifier}`. <br><br>Allowed value: any string<br>Default value: `{NamespaceIndex}.{Identifier}` |
+| **dataCollectionMode** | Optional | `string` | Specifies the data collection mode the adapter is in. The following data collection modes are available:<br> **HistoryOnly** <sup>2</sup> - The adapter component does not get started and history recovery on-demand is enabled. For more information, see [On-demand history recovery](xref:OnDemandHistoryRecoveryConfiguration).<br>**CurrentOnly** - The adapter component operates normally and on-demand history recovery is disabled.<br>**CurrentWithBackfill** <sup>2</sup> - The adapter component operates normally, but disconnections are recorded based on device status. History recovery backfills data once device status is `good`. On-demand history recovery is disabled. For more information, see [Automatic history recovery](xref:AutomaticHistoryRecovery). <br>Changing the mode requires a restart of the adapter component. |
+| **serverFailoverEnabled** | Optional | `boolean` | Specifies whether to use server-side failover. <br><br> Allowed value: `true` or `false` <br> Default value: `false` |
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
- 1  NamespaceIndex refers to the number specified in the `ns` keyword in the **RootNodeIds** parameter.
+<sup>1</sup> NamespaceIndex refers to the number specified in the `ns` keyword in the **RootNodeIds** parameter.
 
- 2  Historical values are collected only for OPC UA items that have the AccessLevel attribute set to `HistoryRead`.
+<sup>2</sup> Historical values are collected only for OPC UA items that have the AccessLevel attribute set to `HistoryRead`.
 
 ## OPC UA data source examples
 

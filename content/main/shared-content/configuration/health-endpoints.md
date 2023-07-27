@@ -4,7 +4,11 @@ uid: HealthEndpointConfiguration
 
 # Health endpoints
 
+<<<<<<< HEAD
 You can configure AVEVA adapters to produce and store health data at a designated health endpoint. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints.
+=======
+You can configure PI adapters to produce and store health data at a designated health endpoint. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints.
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 For more information about adapter health, see [Adapter health](xref:AdapterHealth).
 
@@ -55,6 +59,7 @@ The following parameters are available for configuring health endpoints:
 
 | Parameter                       | Required                            | Type      | Description                                        |
 |---------------------------------|-------------------------------------|-----------|----------------------------------------------------|
+<<<<<<< HEAD
 | **Id**                          | Optional  | `string`    | A unique identifier of the endpoint configuration <br><br>Allowed value: any string identifier<br>Default value: new GUID|
 | **Endpoint**                    | Required  | `string`    | The URL of a destination that accepts OMF v1.2 messages. Supported destinations include ADH and PI Server <br><br>Allowed value: well-formed http or https endpoint string<br>Default: `null`|
 | **Username**                    | Optional   | `string`    | The username used for Basic authentication to the PI Web API OMF endpoint <br><br>_PI server:_<br>Allowed value: any string<br>Default: `null`|
@@ -73,6 +78,25 @@ The following parameters are available for configuring health endpoints:
 {
     "Id": "ADH",
     "Endpoint": "https://<ADH OMF endpoint>",
+=======
+| **Id**                          | Optional                            | `string`    | Uniquely identifies the endpoint. This can be any alphanumeric string. If left blank, a unique value is generated automatically. <br><br>Allowed value: any string identifier<br>Default value: new GUID|
+| **Endpoint**                    | Required                            | `string`    | The URL of the OMF endpoint to receive this health data <br><br>Allowed value: well-formed http or https endpoint string<br>Default: `null`|
+| **Username**                    | Required for PI Web API endpoints   | `string`    | The username used to authenticate with a PI Web API OMF endpoint <br><br>_PI server:_<br>Allowed value: any string<br>Default: `null`|
+| **Password**                    | Required for PI Web API endpoints   | `string`    | The password used to authenticate with a PI Web API OMF endpoint <br><br>_PI server:_<br>Allowed value: any string<br>Default: `null`|
+| **ClientId**                    | Required for OCS endpoints          | `string`    | The client ID used for authentication with an OSIsoft Cloud Services OMF endpoint <br><br>Allowed value: any string<br>Default: `null` |
+| **ClientSecret**                | Required for OCS endpoints          | `string`    | The client secret used for authentication with an OSIsoft Cloud Services OMF endpoint <br><br>Allowed value: any string<br>Default: `null`|
+| **TokenEndpoint** | Optional for OCS endpoints | `string` | Retrieves an OCS token from an alternative endpoint <br><br>Allowed value: well-formed http or https endpoint string <br>Default value: `null` |
+| **ValidateEndpointCertificate** | Optional                            | `boolean`      | Disables verification of destination security certificate. Use for testing only with self-signed certificates; OSIsoft recommends keeping this set to the default, true, in production environments. <br><br>Allowed value: `true` or `false`<br>Default value: `true`|
+
+## Examples
+
+### OCS endpoint
+
+```code
+{
+    "Id": "OCS",
+    "Endpoint": "https://<OCS OMF endpoint>",
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     "ClientId": "<clientid>",
     "ClientSecret": "<clientsecret>"
 }
@@ -123,10 +147,18 @@ See [Reference Secrets](xref:ReferenceSecrets) for more information on how to us
 | api/v1/configuration/system/healthEndpoints      | DELETE    | Deletes all configured health endpoints |
 | api/v1/configuration/system/healthEndpoints      | POST      | Adds an array of health endpoints or a single endpoint. Fails if any endpoint already exists |
 | api/v1/configuration/system/healthEndpoints      | PUT       | Replaces all health endpoints. **Note:** Requires an array of endpoints |
+<<<<<<< HEAD
 | api/v1/configuration/system/healthEndpoints     | PATCH     | Allows partial updating of configured health endpoints **Note:** The request must be an array containing one or more health endpoints. Each health endpoint in the array must include its *Id*.  |
 | api/v1/configuration/system/healthEndpoints/*Id* | GET       | Gets configured health endpoint by *Id* |
 | api/v1/configuration/system/healthEndpoints/*Id*| DELETE     | Deletes configured health endpoint by *Id* |
 | api/v1/configuration/system/healthEndpoints/*Id* | PUT       | Updates or creates a new health endpoint with the specified *Id* |
 | api/v1/configuration/system/healthEndpoints/*Id* | PATCH     | Allows partial updating of configured health endpoint by *Id* |
+=======
+| api/v1/configuration/system/healthEndpoints     | PATCH     | Allows partial updating of configured health endpoints<br>**Note:** The request must be an array containing one or more health endpoints. Each health endpoint in the array must include its **Id**.  |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | GET       | Gets configured health endpoint by \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\>| DELETE     | Deletes configured health endpoint by \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | PUT       | Updates or creates a new health endpoint with the specified \<Id\> |
+| api/v1/configuration/system/healthEndpoints/\<Id\> | PATCH     | Allows partial updating of configured health endpoint by \<Id\> |
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 **Note:** Replace *Id* with the Id of the health endpoint.

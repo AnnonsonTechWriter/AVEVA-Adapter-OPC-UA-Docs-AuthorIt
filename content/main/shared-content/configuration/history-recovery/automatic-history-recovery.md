@@ -4,7 +4,11 @@ uid: AutomaticHistoryRecovery
 
 # Automatic history recovery
 
+<<<<<<< HEAD
 Besides on-demand history recovery, the AVEVA adapter also supports automatic history recovery.
+=======
+In addition to on-demand history recovery, the PI adapter also supports automatic history recovery.
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 For automatic history recovery, the adapter tracks changes to the **DeviceStatus** of each component. When the **DeviceStatus** changes to `DeviceInError` or `Shutdown`, the adapter starts a new [History recovery interval](#history-recovery-intervals). When the issue resolves or if the adapter is restarted and the **DeviceStatus** changes to `Good`, the adapter closes any current intervals for that component. The adapter tracks these intervals for each component and, when DeviceStatus has a value of `Good`, it performs history recovery for these intervals starting from oldest to newest. For more information, see also [Device status](xref:DeviceStatus).
 

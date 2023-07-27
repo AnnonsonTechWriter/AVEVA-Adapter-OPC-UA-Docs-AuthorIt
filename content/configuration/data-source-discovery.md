@@ -10,12 +10,12 @@ A discovery against the data source of an OPC UA adapter allows you to specify t
 
 ## Query string
 
-The string of the **query** parameter must contain string items in the following form: `rootNodeIds=<nodeId>`
+The string of the **query** parameter must contain string items in the following form: <br>`rootNodeIds=<nodeId>`<br><br>
 | String item      | Required | Description |
 |------------------|----------|-------------|
-| **rootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **rootNodeIds** is not specified, the adapter initiates browse operation from the `object` folder. |
+| **rootNodeIds**  | Optional |  The node Ids that the adapter will begin browse operation from.<br>**Note:** To specify multiple node IDs in the query, separate the node IDs with a comma. If **rootNodeIds** is not specified, the adapter initiates browse operation from the `object` folder. |
 
-**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
+<br>**Note:** A NodeId is a unique identification on the OPC UA server that consists of namespace index and identifier.
 
 ### Query rules
 

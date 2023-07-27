@@ -14,7 +14,11 @@ Complete the following steps to generate the default client settings file:
 
 1. Add an OPC UA adapter with a unique `ComponentId`. For more information, see [System components configuration](xref:SystemComponentsConfiguration).
   
+<<<<<<< HEAD
 2. Configure a valid OPC UA data source. For more information, see [AVEVA Adapter for OPC UA data source configuration](xref:AVEVAAdapterForOPCUADataSourceConfiguration).
+=======
+2. Configure a valid OPC UA data source. For more information, see [PI Adapter for OPC UA data source configuration](xref:PIAdapterForOPCUADataSourceConfiguration).
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
    Once you complete these steps, a default OPC UA client settings configuration file generates in the configuration directory for the corresponding platform.
   
@@ -68,10 +72,11 @@ Linux: `/opt/OSIsoft/Adapters/OpcUa/Schemas`
 
 The following parameters are available for configuring OPC UA client settings:
 
-**Note**: All intervals, delays, and timeouts require the string to be formatted like this: `[d:]h:mm:ss[.FFFFFFF]` where the items in brackets are optional. d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second. Example: `"05:07:10:40.150"` for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.
+**Note**: All intervals, delays, and timeouts require the string to be formatted like this:<br> `[d:]h:mm:ss[.FFFFFFF]` where the items in brackets are optional.<br> d = days, h = hours, mm = minutes, ss = seconds, F = fractional portion of a second.<br><br> Example: `"05:07:10:40.150"` for 5 days, 7 hours, 10 minutes, 40 seconds, and .150 seconds.
 
 | Parameter     | Required | Type | Description |
 |---------------|----------|------|-------------|
+<<<<<<< HEAD
 | **maxBrowseReferencesToReturn**      | Optional | `integer` | Maximum number of references returned from browse call. Minimum value: `0`Maximum value: `4294967295`Default value: `0`  |
 | **browseBlockSize**      | Optional | `integer` | Maximum number of nodes to browse in one call. Minimum value: `1`Maximum value: `4294967295`Default value:  `10`|
 | **readBlockSize**      | Optional | `integer` | Maximum number of variables to read in one call. Minimum value: `0`Maximum value: `4294967295`Default value: `1000` |
@@ -93,6 +98,29 @@ The following parameters are available for configuring OPC UA client settings:
 | **maxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. Minimum value: `1000`Maximum value: `2147483647`Default value: `500000` |
 | **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of nodes for history to read in one call. Minimum value: `1`Maximum value: `4294967295`Default value: `10` |
 | **HistoryReadTimeout**      | Optional | `TimeSpan` | History read operation timeout. * Allowed value: greater than `00:00:05`Default value: `0:01:00` |
+=======
+| **maxBrowseReferencesToReturn**      | Optional | `integer` | Maximum number of references returned from browse call. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `0`  |
+| **browseBlockSize**      | Optional | `integer` | Maximum number of nodes to browse in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value:  `10`|
+| **readBlockSize**      | Optional | `integer` | Maximum number of variables to read in one call. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `1000` |
+| **reconnectDelay**      | Optional | `TimeSpan` | Delay between reconnection attempts. *<br>Does not apply to the initial connection, only reconnections.<br><br> Allowed value: cannot be negative <br>Default value: `0:00:30`|
+| **recreateSubscriptionDelay**      | Optional | `TimeSpan` | Delay between successful reconnection and subsequent subscription recreation. * <br><br>Allowed value: cannot be negative <br> Default value: `0:00:10`|
+| **sessionRequestTimeout**      | Optional | `TimeSpan` | Default request timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:02:00`|
+| **connectionTimeout**      | Optional | `TimeSpan` | Connection timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30` |
+| **sessionAllowInsecureCredentials**      | Optional | `boolean` | When set to true credentials can be communicated over unencrypted channel. <br><br>Allowed value: `true` or `false`<br>Default value: `false` |
+| **sessionMaxOperationsPerRequest**      | Optional | `integer` | Default maximum operation per request. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `1000`|
+| **browseTimeout**      | Optional | `TimeSpan` | Browse operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:01:00`|
+| **readTimeout**      | Optional | `TimeSpan` | Read operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30` |
+| **maxMonitoredItemsPerCall**      | Optional | `integer` | Maximum number of monitored items that can be added to subscription in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `1000`|
+| **maxNotificationsPerPublish**      | Optional | `integer` | Maximum notification messages in one publish message. <br><br>Minimum value: `0`<br>Maximum value: `4294967295`<br>Default value: `0` |
+| **publishingInterval**      | Optional | `TimeSpan` | Publishing interval of the subscription. * <br><br> Allowed value: cannot be negative <br> Default value: `0:00:01`|
+| **createMonitoredItemsTimeout**      | Optional | `TimeSpan` | Create monitored items timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:00:30`|
+| **samplingInterval**      | Optional | `TimeSpan` | Monitored item sampling interval. * <br><br>Allowed value: cannot be negative <br>Default value: `0:00:00:5` |
+| **monitoredItemDataChangeTrigger** | Optional | `string` | Determines on what conditions a subscription sends new values to the adapter.<br><br> Allowed values: `Status`, `StatusValue`, `StatusValueTimestamp` <br>Default value: `StatusValue`
+| **monitoredItemQueueSize**      | Optional | `integer` | Monitored item queue size. <br><br>Minimum value: `1`<br> Maximum value: `4294967295` <br>Default value: `2`|
+| **maxInternalQueueSize**      | Optional | `integer` | Maximum number of items that can be in the adapter internal queue. <br><br>Minimum value: `1000`<br>Maximum value: `2147483647`<br>Default value: `500000` |
+| **HistoryReadBlockSize**      | Optional | `integer` | Maximum number of nodes for history to read in one call. <br><br>Minimum value: `1`<br>Maximum value: `4294967295`<br>Default value: `10` |
+| **HistoryReadTimeout**      | Optional | `TimeSpan` | History read operation timeout. * <br><br>Allowed value: greater than `00:00:05`<br>Default value: `0:01:00` |
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 **\* Note:** You can also specify timespans as numbers in seconds. For example, `"reconnectDelay": 25` specifies 25 seconds, or `"reconnectDelay": 125.5` specifies 2 minutes and 5.5 seconds.
 

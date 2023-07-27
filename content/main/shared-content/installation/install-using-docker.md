@@ -21,9 +21,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host
+    else
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     fi
     ```
 
@@ -32,9 +38,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host
+    else
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     fi
     ```
 
@@ -43,9 +55,15 @@ To create a startup script for the adapter, follow the instructions below.
     ```bash
     #!/bin/sh
     if [ -z $portnum ] ; then
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host --port:$portnum
+=======
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host
+    else
+        exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     fi
     ```
 
@@ -67,7 +85,11 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
+<<<<<<< HEAD
     ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_.tar.gz .
+=======
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 
@@ -79,7 +101,11 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
+<<<<<<< HEAD
     ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_.tar.gz .
+=======
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
     
@@ -91,7 +117,11 @@ To create a Docker container that runs the adapter, follow the instructions belo
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
+<<<<<<< HEAD
     ADD ./AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_.tar.gz .
+=======
+    ADD ./PI-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
     ```
 

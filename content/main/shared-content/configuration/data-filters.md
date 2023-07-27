@@ -4,7 +4,11 @@ uid: DataFiltersConfiguration
 
 # Data filters
 
+<<<<<<< HEAD
 AVEVA adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.
+=======
+PI adapters can be configured to perform data filtering to save network bandwidth. Every data item in the data selection configuration can be assigned the Id of a data filter. The adapter will then filter data for those data items based on the data filter configuration.
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 **Note:** If data filters are enabled and data quality changes, both the old and current data quality values are passed on.
 
@@ -55,10 +59,17 @@ The following parameters are available for configuring data filters:
 
 | Parameter                | Required | Type      | Description |
 | ------------------------ | -------- | --------- | ----------- |
+<<<<<<< HEAD
 |**Id**              | Required | `string` | Unique identifier for the data filter.   Allowed value: any string identifier  |
 |**AbsoluteDeadband** | Optional | `double` | Specifies the absolute change in data value that should cause the current value to pass the filter test.   **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.  Allowed value: double value representing absolute deadband number Default value: `null` |
 |**PercentChange**     | Optional | `double` | Specifies the percent change from previous value that should cause the current value to pass the filter test.   **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.  Allowed value: double value representing percent change Default value: `null` |
 |**ExpirationPeriod**     | Optional | `timespan` | The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.*   Allowed value: any timespan  Default value: `null`|
+=======
+|**Id**              | Required | `string` | Unique identifier for the data filter. <br><br>Allowed value: any string identifier<br> |
+|**AbsoluteDeadband** | Optional | `double` | Specifies the absolute change in data value that should cause the current value to pass the filter test. <br> **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.<br><br>Allowed value: double value representing absolute deadband number<br>Default value: `null` |
+|**PercentChange**     | Optional | `double` | Specifies the percent change from previous value that should cause the current value to pass the filter test. <br> **Note:** You must specify `AbsoluteDeadband` or `PercentChange`.<br><br>Allowed value: double value representing percent change<br>Default value: `null` |
+|**ExpirationPeriod**     | Optional | `timespan` | The length in time that can elapse after an event before automatically sending the next event, regardless of whether the next event passes the filter or not. The expected format is HH:MM:SS.### or SSS.* <br><br>Allowed value: any timespan <br>Default value: `null`|
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 **\* Note:** For example, `"ExpirationPeriod": 5:00` and `"ExpirationPeriod": 300` both specify an expiration period of 5 minutes and 0 seconds.
 

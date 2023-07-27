@@ -10,10 +10,13 @@
   - topicUid: UninstallTheAdapter
 - topicUid: OPCUAConfiguration
   items:
+<<<<<<< HEAD
   - topicUid: AVEVAAdapterForOPCUASecurityConfiguration
     items:
     - topicUid: Secrets
     - topicUid: ReferenceSecrets
+=======
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
   - topicUid: ConfigurationTools
   - topicUid: ClientFailoverConfiguration
   - topicUid: AVEVAAdapterForOPCUASystemComponentsConfiguration

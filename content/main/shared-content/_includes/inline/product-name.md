@@ -1,1 +1,1 @@
-AVEVA Adapter for OPC UA
+PI Adapter for OPC UA

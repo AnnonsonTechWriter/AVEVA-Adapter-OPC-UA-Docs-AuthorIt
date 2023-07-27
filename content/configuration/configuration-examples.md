@@ -4,7 +4,7 @@ uid: AVEVAAdapterForOPCUAConfigurationExamples
 
 # Configuration examples
 
-The following tables provide examples for all configurations available for AVEVA Adapter for OPC UA.
+The following tables provide examples for all configurations available for PI Adapter for OPC UA.
 
 **Note:** The examples in this topic are using the default port number `5590`. If you selected a different port number, replace it with that value.
 
@@ -99,14 +99,17 @@ The following tables provide examples for all configurations available for AVEVA
                 "password": "PASSWORD"
             },
             {
-                "id": "AVEVA Data Hub Endpoint",
-                "endpoint": "https://AVEVA Data HubEndpoint/omf",
+                "id": "OCS Endpoint",
+                "endpoint": "https://OCSEndpoint/omf",
                 "clientId": "CLIENTID",
                 "clientSecret": "CLIENTSECRET"
+<<<<<<< HEAD
             },
             {
                 "id": "EDS",
                 "endpoint": "http://localhost:<EDSPORT>/api/v1/tenants/default/namespaces/default/omf"
+=======
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
             }
         ]
     }

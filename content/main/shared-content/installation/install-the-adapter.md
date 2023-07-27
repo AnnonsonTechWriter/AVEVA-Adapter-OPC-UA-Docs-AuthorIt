@@ -8,7 +8,11 @@ You can install adapters on either a Windows or Linux operating system. Before i
 
 ## Windows
 
+<<<<<<< HEAD
 Complete the following steps to install an AVEVA adapter on a Windows computer:
+=======
+Complete the following steps to install a PI adapter on a Windows computer:
+>>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
 
 1. Download <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> from the [OSIsoft Customer portal](https://customers.osisoft.com/s/products).
 
