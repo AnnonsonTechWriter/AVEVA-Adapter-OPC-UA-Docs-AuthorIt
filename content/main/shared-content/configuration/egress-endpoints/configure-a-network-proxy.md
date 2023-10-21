@@ -5,10 +5,14 @@ uid: ConfigureANetworkProxy
 # Configure a network proxy
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Some network architectures may need a network proxy between the AVEVA adapter and the egress endpoint. The process for configuring the adapter to egress data through a network proxy varies depending on the proxy type.
 =======
 Some network architectures may need a network proxy between the PI adapter and the egress endpoint. The process for configuring the adapter to egress data through a network proxy varies depending on the proxy type.
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+Some network architectures may need a network proxy between the AVEVA adapter and the egress endpoint. The process for configuring the adapter to egress data through a network proxy varies depending on the proxy type.
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 ## HTTPS forward proxy
 

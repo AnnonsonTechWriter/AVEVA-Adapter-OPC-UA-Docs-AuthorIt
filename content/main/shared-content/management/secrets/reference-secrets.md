@@ -77,7 +77,11 @@ The health configuration replaces the **ClientSecret** value with the generated 
 [
     {
         "Id": "AVEVA Data Hub",
+<<<<<<< HEAD
         "Endpoint": "https://<OCS OMF endpoint>",
+=======
+        "Endpoint": "https://<ADH OMF endpoint>",
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
         "ClientId": "<clientid>",
         "ClientSecret": "{{System.HealthEndpoints.AVEVA Data Hub.ClientSecret}}"
     }

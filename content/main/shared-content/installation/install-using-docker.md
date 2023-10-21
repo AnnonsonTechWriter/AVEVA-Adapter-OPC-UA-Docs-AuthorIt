@@ -22,6 +22,7 @@ To create a startup script for the adapter, follow the instructions below.
     #!/bin/sh
     if [ -z $portnum ] ; then
 <<<<<<< HEAD
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm_/OSIsoft.Data.System.Host --port:$portnum
@@ -30,6 +31,11 @@ To create a startup script for the adapter, follow the instructions below.
     else
         exec /PI-Adapter-for-OpcUa_1.3.0.169-arm_/OSIsoft.Data.System.Host --port:$portnum
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+        exec /OpcUa_linux-arm_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-arm_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     fi
     ```
 
@@ -39,6 +45,7 @@ To create a startup script for the adapter, follow the instructions below.
     #!/bin/sh
     if [ -z $portnum ] ; then
 <<<<<<< HEAD
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-arm64_/OSIsoft.Data.System.Host --port:$portnum
@@ -47,6 +54,11 @@ To create a startup script for the adapter, follow the instructions below.
     else
         exec /PI-Adapter-for-OpcUa_1.3.0.169-arm64_/OSIsoft.Data.System.Host --port:$portnum
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+        exec /OpcUa_linux-arm64_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-arm64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     fi
     ```
 
@@ -56,6 +68,7 @@ To create a startup script for the adapter, follow the instructions below.
     #!/bin/sh
     if [ -z $portnum ] ; then
 <<<<<<< HEAD
+<<<<<<< HEAD
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host
     else
         exec /AVEVA-Adapter-for-OpcUa_1.4.0.196-x64_/OSIsoft.Data.System.Host --port:$portnum
@@ -64,6 +77,11 @@ To create a startup script for the adapter, follow the instructions below.
     else
         exec /PI-Adapter-for-OpcUa_1.3.0.169-x64_/OSIsoft.Data.System.Host --port:$portnum
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+        exec /OpcUa_linux-x64_/OSIsoft.Data.System.Host
+    else
+        exec /OpcUa_linux-x64_/OSIsoft.Data.System.Host --port:$portnum
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     fi
     ```
 
@@ -83,6 +101,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
 <<<<<<< HEAD
@@ -91,6 +110,12 @@ To create a Docker container that runs the adapter, follow the instructions belo
     ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm_.tar.gz .
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-arm_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     ```
 
     **ARM64**
@@ -99,6 +124,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
 <<<<<<< HEAD
@@ -107,6 +133,12 @@ To create a Docker container that runs the adapter, follow the instructions belo
     ADD ./PI-Adapter-for-OpcUa_1.3.0.169-arm64_.tar.gz .
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-arm64_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     ```
     
 	**AMD64 (x64)**
@@ -115,6 +147,7 @@ To create a Docker container that runs the adapter, follow the instructions belo
     FROM ubuntu:20.04
     WORKDIR /
     RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y ca-certificates libicu66 libssl1.1 curl
+<<<<<<< HEAD
     COPY opcuadockerstart.sh /
     RUN chmod +x /opcuadockerstart.sh
 <<<<<<< HEAD
@@ -123,6 +156,12 @@ To create a Docker container that runs the adapter, follow the instructions belo
     ADD ./PI-Adapter-for-OpcUa_1.3.0.169-x64_.tar.gz .
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
     ENTRYPOINT ["/opcuadockerstart.sh"]
+=======
+    COPY {adapter}dockerstart.sh /
+    RUN chmod +x /{adapter}dockerstart.sh
+    ADD ./OpcUa_linux-x64_.tar.gz .
+    ENTRYPOINT ["/{adapter}dockerstart.sh"]
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     ```
 
 2. Copy the <code>[!include[installer](../_includes/inline/installer-name.md)]-<var>platform</var>_.tar.gz</code> file to the same directory as the `Dockerfile`.

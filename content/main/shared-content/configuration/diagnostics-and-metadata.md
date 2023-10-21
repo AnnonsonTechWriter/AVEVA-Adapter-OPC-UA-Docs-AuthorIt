@@ -5,11 +5,16 @@ uid: GeneralConfiguration
 # Diagnostics and metadata
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 You can configure AVEVA adapters to produce and store diagnostics data at a designated health endpoint, and to send metadata for created streams.
 
 =======
 You can configure PI adapters to produce and store diagnostics data at a designated health endpoint, and to send metadata for created streams.
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+You can configure AVEVA adapters to produce and store diagnostics data at a designated health endpoint, and to send metadata for created streams.
+
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 For more information about available diagnostics data, see [Adapter diagnostics](xref:AdapterDiagnostics) and [Egress diagnostics](xref:EgressDiagnostics).
 For more information about available metadata and what metadata are sent per metadata level, see [Adapter Metadata](xref:AdapterMetadata).
 
@@ -41,6 +46,7 @@ The following parameters are available for configuring general:
 | Parameter             | Required | Type    | Description |
 | ---------             | -------- | ------- | ----------- |
 <<<<<<< HEAD
+<<<<<<< HEAD
 | **EnableDiagnostics** | Optional | `boolean` | Determines if diagnostics are enabled  Allowed value: `true` or `false` Default value: `true` |
 | **MetadataLevel** | Optional | `reference` | Defines amount of metadata sent to OMF endpoints.   Allowed value: `None`, `Low`, `Medium`, and `High`  Default value: `Medium`|
 | **HealthPrefix** | Optional | `reference` | Prefix to use for health and diagnostics stream and asset IDs.  Default value: `null`|
@@ -49,6 +55,11 @@ The following parameters are available for configuring general:
 | **MetadataLevel** | Optional | `reference` | Defines amount of metadata sent to OMF endpoints.<br><br> Allowed value: `None`, `Low`, `Medium`, and `High`<br> Default value: `Medium`|
 | **HealthPrefix** | Optional | `reference` | Prefix to use for health and diagnostics stream and asset IDs.<br> Default value: `null`|
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+| **EnableDiagnostics** | Optional | `boolean` | Determines if diagnostics are enabled  Allowed value: `true` or `false` Default value: `true` |
+| **MetadataLevel** | Optional | `reference` | Defines amount of metadata sent to OMF endpoints.   Allowed value: `None`, `Low`, `Medium`, and `High`  Default value: `Medium`|
+| **HealthPrefix** | Optional | `reference` | Prefix to use for health and diagnostics stream and asset IDs.  Default value: `null`|
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 ## Example
 

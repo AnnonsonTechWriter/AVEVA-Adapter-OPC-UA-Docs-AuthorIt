@@ -51,6 +51,7 @@ The following parameters are available for configuring schedules:
 | Parameter                | Required | Type      | Description |
 | ------------------------ | -------- | --------- | ----------- |
 <<<<<<< HEAD
+<<<<<<< HEAD
 |**Id**              | Required | `string` | Unique identifier for the schedule  Allowed value: any string identifier |
 |**Period** | Required | `string` | The data sampling rate of the schedule. The expected format is HH:MM:SS.###.   Invalid inputs: `null`, negative timespan, or zero   A default value must be specified.|
 |**Offset**     | Optional | `string` | The offset from the midnight when the schedule starts. The expected format is HH:MM:SS.###   Invalid input: negative timespan  A default value must be specified. |
@@ -59,6 +60,11 @@ The following parameters are available for configuring schedules:
 |**Period** | Required | `string` | The data sampling rate of the schedule. The expected format is HH:MM:SS.###. <br><br>Invalid inputs: `null`, negative timespan, or zero <br><br>A default value must be specified.|
 |**Offset**     | Optional | `string` | The offset from the midnight when the schedule starts. The expected format is HH:MM:SS.### <br><br>Invalid input: negative timespan<br><br>A default value must be specified. |
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+|**Id**              | Required | `string` | Unique identifier for the schedule  Allowed value: any string identifier |
+|**Period** | Required | `string` | The data sampling rate of the schedule. The expected format is HH:MM:SS.###.   Invalid inputs: `null`, negative timespan, or zero   A default value must be specified.|
+|**Offset**     | Optional | `string` | The offset from the midnight when the schedule starts. The expected format is HH:MM:SS.###   Invalid input: negative timespan  A default value must be specified. |
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 **Note:** You can also specify timespans as numbers in seconds. For example, `"Period": 25` specifies 25 seconds, or `"Period": 125` specifies 2 minutes and 5 seconds.
 

@@ -7,10 +7,14 @@ uid: RetrieveProductVersionInformation
 The product version information includes the adapter framework version, application version, the version of the underlying .NET Core framework, and the operating system that the adapter is running on.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Complete the following steps to retrieve the product version information of an AVEVA adapter:
 =======
 Complete the following steps to retrieve the product version information of a PI adapter:
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+Complete the following steps to retrieve the product version information of an AVEVA adapter:
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 1. Use any of the [Configuration tools](xref:ConfigurationTools) capable of making HTTP requests.
 2. Run a `GET` command to the following endpoint: `http://localhost:5590/api/v1/Diagnostics/ProductInformation`
@@ -30,6 +34,7 @@ Complete the following steps to retrieve the product version information of a PI
     ```code
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Product Name": "AVEVA Adapter for OpcUa",
       "Product Version": "1.4.0.196",
       "Adapter Framework Version": "1.7.0.109",
@@ -37,6 +42,9 @@ Complete the following steps to retrieve the product version information of a PI
       "Operating System": "Microsoft Windows 10.0.19045"
 =======
     "Application Name": "PI Adapter for <AdapterName>",
+=======
+    "Application Name": "AVEVA Adapter for <AdapterName>",
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     "Adapter Framework Version": "1.3.0.351",
     "Application Version":"1.3.0.169",
     ".Net Core Version":".NET Core 3.1.5",

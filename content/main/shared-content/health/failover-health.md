@@ -4,7 +4,11 @@ uid: FailoverHealth
 
 # Failover Health
 
+<<<<<<< HEAD
 PI Adapters produce various kinds of health data that can be egressed to different health endpoints. If an adapter has failover enabled, additional health information pertaining to failover is available.
+=======
+AVEVA Adapters produce various kinds of health data that can be egressed to different health endpoints. If an adapter has failover enabled, additional health information pertaining to failover is available.
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 To egress health-related data, you have to configure an adapter health endpoint first. For more information, see [Health endpoint configuration](xref:HealthEndpointConfiguration).
 

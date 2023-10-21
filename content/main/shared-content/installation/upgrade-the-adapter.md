@@ -9,12 +9,16 @@ When a new version of the adapter is released, you can upgrade to the latest ver
 ## Windows upgrade
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Complete the following steps to upgrade an AVEVA adapter on a Windows computer:
 =======
 Complete the following steps to upgrade a PI adapter on a Windows computer:
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+Complete the following steps to upgrade an AVEVA adapter on a Windows computer:
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
-1. Download <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> from the [OSIsoft Customer Portal](https://customers.osisoft.com/s/products).
+1. Download <code>[!include[installer](../_includes/inline/installer-name.md)]-x64_.msi</code> from the [AVEVA Customer Portal](https://customers.osisoft.com/s/products).
 
     **Note:** Customer login credentials are required to access the portal.
 
@@ -41,12 +45,16 @@ Complete the following steps to upgrade a PI adapter on a Windows computer:
 ## Linux upgrade
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Complete the following steps to upgrade an AVEVA adapter on a Linux computer:
 =======
 Complete the following steps to upgrade a PI adapter on a Linux computer:
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+Complete the following steps to upgrade an AVEVA adapter on a Linux computer:
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
-1. Download the appropriate Linux distribution file from the [OSIsoft Customer Portal](https://customers.osisoft.com/s/products).
+1. Download the appropriate Linux distribution file from the [AVEVA Customer Portal](https://customers.osisoft.com/s/products).
 
     **Note:** Customer login credentials are required to access the portal.
 

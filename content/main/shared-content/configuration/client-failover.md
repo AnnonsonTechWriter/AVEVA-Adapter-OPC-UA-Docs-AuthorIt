@@ -25,7 +25,11 @@ Complete the following steps to configure client failover.
 
 2. Save the file. For example, `ConfigureClientFailover.json`.
 
+<<<<<<< HEAD
 3. Use any of the [Configuration tools](xref:ConfigurationTools) capable of making HTTP requests to run a PUT command with the contents of the file to the following endpoint: `https://<hostname>:<port>/api/v1/ClientFailover`.
+=======
+3. Use any of the [Configuration tools](xref:ConfigurationTools) capable of making HTTP requests to run a PUT command with the contents of the file to the following endpoint: `https://hostname>:5590/api/v1/configuration/system/ClientFailover`.
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
     **Note:** `5590` is the default port number. If you selected a different port number, replace it with that value.
 
@@ -34,7 +38,11 @@ Complete the following steps to configure client failover.
     **Note:** Run this command from the same directory where the file is located.
 
     ```bash
+<<<<<<< HEAD
     curl -d "@ConfigureClientFailover.json" -H "Content-Type: application/json" -X PUT "https://<hostname>:<port>/api/v1/ClientFailover"
+=======
+    curl -d "@ConfigureClientFailover.json" -H "Content-Type: application/json" -X PUT "hostname>:5590/api/v1/configuration/system/ClientFailover"
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     ```
 
 On successful execution, the client failover change takes effect immediately during runtime.
@@ -46,7 +54,11 @@ On successful execution, the client failover change takes effect immediately dur
 | **FailoverGroupId** | Required | `string` | The ID of the failover group to register the adapter instance in <br><br>Allowed value: any string identifier<br>Default value: `null` |
 | **Name** | Optional | `string` | The friendly name of the failover group <br><br>Allowed value: any string value<br>Default value: `null` |
 | **Description** | Optional | `string`| The description of the failover group <br><br>Allowed value: any string value<br>Default value: `null` |
+<<<<<<< HEAD
 | **FailoverTimeout** | Required | `datetime` | The failover timeout value of the failover group. This defines how frequently the adapter will send a heartbeat to the failover endpoint. The heartbeat will be sent at every FailoverTimeout / 2 interval <br><br>Allowed value: a string representation of date time using `hh:mm:ss` <br>|
+=======
+| **FailoverTimeout** | Required | `timespan` | The failover timeout value of the failover group. This defines how frequently the adapter will send a heartbeat to the failover endpoint. The heartbeat will be sent at every FailoverTimeout / 2 interval <br><br>Allowed value: a string representation of timespan using `hh:mm:ss` <br>|
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 | **Mode** | Required | `string` | The failover mode of the registered adapter <br><br>Allowed value: `Hot`, `Warm`, `Cold` <br> For more information, see [Failover Modes](#failover-modes). |
 | **Endpoint** | Required | `string` | The URL of a destination that supports client failover registration. Supported destinations include ADH and on-premise Failover Service <br><br>Allowed value: well-formed http or https endpoint string<br>Default: `null` |
 | **UserName** | Optional | `string` | The username used for Basic authentication to on-premise Failover Service endpoint <br><br>Allowed value: any string<br>Default: `null`<br><br>**Note:** If your username contains a backslash, you must add an escape character, for example, type `OilCompany\TestUser` as `OilCompany\\TestUser`. |

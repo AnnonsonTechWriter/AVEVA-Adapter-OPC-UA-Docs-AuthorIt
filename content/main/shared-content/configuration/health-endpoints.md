@@ -5,10 +5,14 @@ uid: HealthEndpointConfiguration
 # Health endpoints
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 You can configure AVEVA adapters to produce and store health data at a designated health endpoint. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints.
 =======
 You can configure PI adapters to produce and store health data at a designated health endpoint. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints.
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+You can configure AVEVA adapters to produce and store health data at a designated health endpoint. You can use health data to ensure that your adapters are running properly and that data flows to the configured OMF endpoints.
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 For more information about adapter health, see [Adapter health](xref:AdapterHealth).
 
@@ -60,6 +64,9 @@ The following parameters are available for configuring health endpoints:
 | Parameter                       | Required                            | Type      | Description                                        |
 |---------------------------------|-------------------------------------|-----------|----------------------------------------------------|
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 | **Id**                          | Optional  | `string`    | A unique identifier of the endpoint configuration <br><br>Allowed value: any string identifier<br>Default value: new GUID|
 | **Endpoint**                    | Required  | `string`    | The URL of a destination that accepts OMF v1.2 messages. Supported destinations include ADH and PI Server <br><br>Allowed value: well-formed http or https endpoint string<br>Default: `null`|
 | **Username**                    | Optional   | `string`    | The username used for Basic authentication to the PI Web API OMF endpoint <br><br>_PI server:_<br>Allowed value: any string<br>Default: `null`|
@@ -69,6 +76,7 @@ The following parameters are available for configuring health endpoints:
 | **DebugExpiration** | Optional | string | An optional string that enables logging of detailed information to disk for each outbound HTTP request pertaining to the egress endpoint. The value represents the date and time this detailed information should stop being saved. Examples of valid strings representing date and time:  UTC: `yyyy-mm-ddThh:mm:ssZ`, Local: `yyyy-mm-ddThh:mm:ss`. For more information, see [Egress debug logging](xref:TroubleshootTheAdapter#egress-debug-logging).<br><br>Default: `null`|
 | **TokenEndpoint** | Optional | `string` | An optional token endpoint where the adapter retrieves a bearer token. When null or not specified the adapter uses a well-known Open ID URL to retrieve it <br><br>Allowed value: well-formed http or https endpoint string <br>Default value: `null` |
 | **ValidateEndpointCertificate** | Optional | `boolean`  | An optional Boolean flag where, when set to false, the adapter will disable the verification of the server certificate <br><br>**Note:** AVEVA strongly recommends only disabling server certificate validation for testing purposes <br><br>Allowed value: `true` or `false`<br>Default value: `true` |
+<<<<<<< HEAD
 
 ## Examples
 
@@ -87,16 +95,23 @@ The following parameters are available for configuring health endpoints:
 | **ClientSecret**                | Required for OCS endpoints          | `string`    | The client secret used for authentication with an OSIsoft Cloud Services OMF endpoint <br><br>Allowed value: any string<br>Default: `null`|
 | **TokenEndpoint** | Optional for OCS endpoints | `string` | Retrieves an OCS token from an alternative endpoint <br><br>Allowed value: well-formed http or https endpoint string <br>Default value: `null` |
 | **ValidateEndpointCertificate** | Optional                            | `boolean`      | Disables verification of destination security certificate. Use for testing only with self-signed certificates; OSIsoft recommends keeping this set to the default, true, in production environments. <br><br>Allowed value: `true` or `false`<br>Default value: `true`|
+=======
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 
 ## Examples
 
-### OCS endpoint
+### ADH endpoint
 
 ```code
 {
+<<<<<<< HEAD
     "Id": "OCS",
     "Endpoint": "https://<OCS OMF endpoint>",
 >>>>>>> parent of fe84c03 (Merge pull request #5 from osisoft/main)
+=======
+    "Id": "ADH",
+    "Endpoint": "https://<ADH OMF endpoint>",
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
     "ClientId": "<clientid>",
     "ClientSecret": "<clientsecret>"
 }
@@ -148,6 +163,9 @@ See [Reference Secrets](xref:ReferenceSecrets) for more information on how to us
 | api/v1/configuration/system/healthEndpoints      | POST      | Adds an array of health endpoints or a single endpoint. Fails if any endpoint already exists |
 | api/v1/configuration/system/healthEndpoints      | PUT       | Replaces all health endpoints. **Note:** Requires an array of endpoints |
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6e64e0fc7b4fd589ee7219791ac8da0fdf5a2306
 | api/v1/configuration/system/healthEndpoints     | PATCH     | Allows partial updating of configured health endpoints **Note:** The request must be an array containing one or more health endpoints. Each health endpoint in the array must include its *Id*.  |
 | api/v1/configuration/system/healthEndpoints/*Id* | GET       | Gets configured health endpoint by *Id* |
 | api/v1/configuration/system/healthEndpoints/*Id*| DELETE     | Deletes configured health endpoint by *Id* |
